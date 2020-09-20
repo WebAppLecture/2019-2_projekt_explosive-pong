@@ -1,0 +1,435 @@
+
+@keyframes hit_movement{
+    0%{ left: 150px;}
+    100%{left:1220px;}
+}
+
+@keyframes hit_target{
+    0%   {border-color: #ffffff;}
+    17.5%  {border-color: #ffffff;}
+    17.6%{border-color: #ffdf40;}
+    42.5%  {border-color: #ffdf40;}
+    42.6%{border-color: #ff9040;}
+    67.5%  {border-color: #ff9040;}
+    67.6%{border-color: #ff2626;}
+    92.5%  {border-color: #ff2626;}
+    92.6%{border-color: #212121;}
+    100% {border-color: #212121;}
+}
+
+@keyframes boost_movement{
+    0%{left: 0px;}
+    75%{left: 620px;}
+    100%{left:1220px;}
+}
+
+@keyframes ignite_movement{
+    0%{left: 120px; top:12px; background-color:#ffffff; width:80px; height:80px; border-radius: 0%}
+    40%{left: 620px; background-color: #FFFFFF;}
+    49.9%{left: 719px; background-color: #FFFFFF;}
+    50%{left: 720px; background-color: #FF5555;}
+    59.9%{left: 819px; background-color: #FF5555;}
+    60%{left: 820px; background-color: #FFFFFF;}
+    69.9%{left: 919px; background-color: #FFFFFF;}
+    70%{left: 920px; background-color: #FF5555;}
+    79.9%{left: 1019px; background-color: #FF5555;}
+    80%{left: 1020px; top:12px; background-color: #FFFFFF; width:80px; height:80px;border-radius: 0%}
+    80.5%{left: 860px; top: -148; width: 400px; height: 400px; border-radius: 50%}    
+    100%{left: 860px; top: -148; width: 400px; height: 400px; border-radius: 50%}
+}
+
+@keyframes defuse_movement{
+    0%{left: 120px; background-color:#ffffff;}
+    9.9%{left: 219px; background-color: #FFFFFF;}
+    10%{left: 220px; background-color: #FF5555;}
+    19.9%{left: 319px; background-color: #FF5555;}
+    20%{left: 320px; background-color: #FFFFFF;}
+    29.9%{left: 419px; background-color: #FFFFFF;}
+    30%{left: 420px; background-color: #FF5555;}
+    39.9%{left: 519px; background-color: #FF5555;}
+    40%{left: 520px; background-color: #FFFFFF;}
+    49.9%{left: 619px; background-color: #FFFFFF;}
+    50%{left: 620px; background-color: #FF5555;}
+    50.1%{background-color: #FFFFFF;}
+    100%{left: 1020px; background-color: #FFFFFF;}
+    
+}
+
+@keyframes scatter_movement{
+    0%{left: 370px; top: 80px;}
+    19%{left: 620px; top: 80px;}
+    25%{left: 820px; top: -120px;}
+    25.1%{left: 370px; top: 80px;}
+    43%{left: 620px; top: 80px;}
+    50%{left: 820px; top: 280px;}
+    50.1%{left: 370px; top: 80px;}
+    69%{left: 620px; top: 80px;}
+    75%{left: 420px; top: -120px;}
+    75.1%{left: 370px; top: 80px;}
+    93%{left: 620px; top: 80px;}
+    100%{left: 420px; top: 280px;}
+}
+
+@keyframes power_movement{
+    0%{ left: 150px; background-color: #ffffff;}
+    50%{left: 620px; background-color: #ffffff;}
+    50.1%{background-color: #ffe436;}
+    100%{left:1220px; background-color: #ffe436;}
+}
+
+@keyframes power_target{
+    0%{border-color: #ffffff;}
+    36%{border-color: #ffffff;}
+    36.1%{border-color: #ff9040;}
+    86%{border-color: #ff9040;}
+    86.5%{border-color: #212121;}
+    100%{border-color: #212121;}
+}
+
+
+
+
+
+
+
+canvas, #maincanvas{
+    position: absolute;
+    border: 5px solid #ffffff;
+    align-content: center;
+    left: calc(50% - 650px);
+}
+
+p{
+    font-size: 20px;
+    color:'ffffff';
+    font-family: 'Share Tech Mono', monospace;
+}
+
+header{
+    color: #ffffff;
+    text-align: center;
+    font-size: 70px;
+    font-family: 'Share Tech Mono', monospace;
+    line-height: 100px;
+    margin: 20px 0;
+}
+
+.score {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 5px solid #ffffff;
+    margin: 0 50px;
+}
+
+body{
+    background-color: #000000;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 80px;
+    color: #ffffff;
+}
+
+#tutorial{
+    display: inline-block;
+    position: relative;
+    margin-top: 900px;
+    left: calc(50% - 650px);
+    width: 1300;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.grouped_control_display{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 70px;
+    font-family: 'Share Tech Mono', monospace;
+    color:#ffffff;
+    line-height: 100px;
+    margin: 50px 0px;
+}
+
+.controls_name{
+    width: 200px;
+    color: #ffffff;
+    font-size: 70px;
+    text-align: center;
+    margin:20px 20px;
+}
+
+.single_key_display{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 5px solid #ffffff;
+    color: #ffffff;
+    margin: 0px 100px;
+}
+
+#hit_targets_prompt{
+    color: #ffffff;
+}
+
+#boost_effect_prompt{
+    color: #70faff;
+}
+
+#scatter_effect_prompt{
+    color:#5757ff;
+}
+
+#ignite_effect_prompt{
+    color: #d13030;
+}
+
+#defuse_effect_prompt{
+    color: #7fc947;
+}
+
+#power_effect_prompt{
+    color: #ffe436;
+}
+
+
+
+
+.effects_name{
+    width: 500px;
+    text-align: center;
+    justify-content: center;
+    font-size: 70px;
+    font-family: 'Share Tech Mono', monospace;
+    color:#ffffff;
+    line-height: 100px;
+    margin: 50px 0px;
+}
+
+
+#effect_area_animations{
+    width: 1300;
+    height: 3200;
+    left: calc(50% - 650px);
+    background-color: #010000;
+}
+
+
+
+
+
+.explanation_animation{
+    width: 1300;
+    height: 500;
+    left: calc(50% - 650px);
+    margin-bottom: 20px;
+    border-width: 5px;
+    border-color: #ffffff;
+    border-style: solid;
+    background-color: #010000;
+}
+
+#hit_target{
+    position: relative;
+    animation-name: hit_target;
+    animation-duration:8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    top: 215px;
+    left: 950px;
+    width: 50px;
+    height: 50px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #ffffff;
+    background-color: #000000;
+}
+
+#hit_ball{
+    position: relative;
+    animation-name: hit_movement;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    left: 150px;
+    top: 140px;
+    width: 80px;
+    height: 80px;
+    background-color: #ffffff;
+}
+
+#boost_area{
+    position: relative;
+    top: 190px;
+    left: 590px;
+    width: 120px;
+    height: 120px;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 50%;
+    border-color: #70faff;
+    background-color: #000000;
+}
+
+#boost_ball{
+    position: relative;
+    animation-name: boost_movement;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    left: 150px;
+    top: 80px;
+    width: 80px;
+    height: 80px;
+    background-color: #ffffff;
+}
+
+#ignite_area{
+    position: relative;
+    top: 190px;
+    left: 590px;
+    width: 120px;
+    height: 120px;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 50%;
+    border-color: #d13030;
+    background-color: #000000;
+}
+
+#ignite_target{
+    position: relative;
+    top: 87px;
+    left: 1150px;
+    width: 50px;
+    height: 50px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #ffffff;
+    background-color: #000000;
+}
+
+#ignite_ball{
+    position: relative;
+    animation-name: ignite_movement;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    left: 150px;
+    top: 12px;
+    width: 80px;
+    height: 80px;
+    background-color: #ffffff;
+}
+
+#defuse_area{
+    position: relative;
+    top: 190px;
+    left: 590px;
+    width: 120px;
+    height: 120px;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 50%;
+    border-color: #7fc947;
+    background-color: #000000;
+}
+
+#defuse_ball{
+    position: relative;
+    animation-name: defuse_movement;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    left: 120px;
+    top: 80px;
+    width: 80px;
+    height: 80px;
+    background-color: #ffffff;
+}
+
+#scatter_area{
+    position: relative;
+    top: 190px;
+    left: 590px;
+    width: 120px;
+    height: 120px;
+    border-width: 10px;
+    border-style: dashed;
+    border-radius: 50%;
+    border-color: #5757ff;
+    background-color: #000000;
+}
+
+#scatter_ball{
+    position: relative;
+    animation-name: scatter_movement;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    left: 150px;
+    top: 80px;
+    width: 80px;
+    height: 80px;
+    background-color: #ffffff;
+}
+
+#power_area{
+    position: relative;
+    top: 190px;
+    left: 590px;
+    width: 120px;
+    height: 120px;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 50%;
+    border-color: #ffe436;
+    background-color: #000000;
+}
+
+#power_target{
+    position: relative;
+    animation-name: power_target;
+    animation-duration:4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    top: 87px;
+    left: 950px;
+    width: 50px;
+    height: 50px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #ffffff;
+    background-color: #000000;
+}
+
+#power_ball{
+    position: relative;
+    animation-name: power_movement;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    left: 150px;
+    top: 12px;
+    width: 80px;
+    height: 80px;
+    background-color: #ffffff;
+}
+
+
+#credits{
+    position:relative;
+    width: 1300px;
+    height: 50px;
+    left: calc(50% - 650px);
+    top: 650px;
+    margin-top: 50px;
+    color: #ffffff;
+    font-size: 15px;
+    text-align: center;
+
+}

@@ -1,0 +1,79 @@
+
+<html>
+    <head>
+        <title>Explosive Pong</title>
+        <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet", href="../css/explosive_pong.css"/>
+    </head>
+    <body>
+        <header><span id="score1" class="score">0</span>explosive pong<span id="score2" class="score">0</span></header>
+
+        <canvas id="maincanvas" width=1300 height=800>
+
+                
+
+        </canvas>
+        <div id="tutorial">
+            <span class="grouped_control_display"><h1>how to play</h1></span>
+            <span class="grouped_control_display"><span class="single_key_display">W</span> <p class="controls_name">up</p><span class="single_key_display">O</span></span>
+            <span class="grouped_control_display"><span class="single_key_display">S</span><p class="controls_name">down</p><span class="single_key_display">L</span></span>
+            <span class="grouped_control_display"></span>
+
+            <div id="effect_area_animations">
+
+                <span class="effects_name" id="hit_targets_prompt" >hit targets to win</span>
+                <div class="explanation_animation">
+                        <div id="hit_target"></div>
+                        <div id="hit_ball"></div>
+                    </div>
+
+                
+                <span class="effects_name" id="hit_targets_prompt" >hit rings to:</span>
+                <br/>
+                <span class="effects_name" id="boost_effect_prompt" >boost</span>
+                <div class="explanation_animation">
+                    <div id="boost_area"></div>
+                    <div id="boost_ball"></div>
+                </div>
+
+                <span class="effects_name" id="ignite_effect_prompt" >ignite & blow up</span>
+                <div class="explanation_animation">
+                    <div id="ignite_area"></div>
+                    <div id="ignite_target"></div>
+                    <div id="ignite_ball"></div>
+                </div>
+
+                <span class="effects_name" id="defuse_effect_prompt" >defuse</span>
+                <div class="explanation_animation">
+                    <div id="defuse_area"></div>
+                    <div id="defuse_target"></div>
+                    <div id="defuse_ball"></div>
+                </div>
+
+                <span class="effects_name" id="scatter_effect_prompt" >scatter</span></span>
+                <div class="explanation_animation">
+                    <div id="scatter_area"></div>
+                    <div id="scatter_ball"></div>
+                </div>
+
+                <span class="effects_name" id="power_effect_prompt" >double damage</span>
+                <div class="explanation_animation">
+                    <div id="power_area"></div>
+                    <div id="power_target"></div>
+                    <div id="power_ball"></div>
+                </div>
+            </div>
+        
+        </div>
+        <p id="credits">a game by maximilian kilger</p>
+        <script>
+            try{
+                import("../js/Main.js")
+                .then(modul=> window.Main = modul.default)
+                .then(()=>{let a = new Main();});
+            }catch(e){}
+        </script>
+        
+    </body>
+</html>
+<script src='../../libraries/victor/victor-1.1.0/build/victor.js'></script>
